@@ -28,7 +28,7 @@ LConsole是基于我的另外一个项目[monkey](https://github.com/haifenghuan
 
 下面的部分局限你需要知道:
 
-* `liner`的`multiLineMode`现在还不支持
+* ~~`liner`的`multiLineMode`现在还不支持~~
 * 代码没有完全测试过
 * 仅仅在centos和windows下测试通过
 

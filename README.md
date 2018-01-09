@@ -29,7 +29,7 @@ Just download the repository and run `./run.sh`
 
 There are some limitations you need to konw:
 
-* The `multiLineMode` of `liner` is not supported.
+* ~~The `multiLineMode` of `liner` is not supported.~~
 * The code is not tested thoroughly.
 * I only tested the code in centos and windows.
 

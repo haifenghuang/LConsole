@@ -205,8 +205,14 @@ func (s *State) refreshMultiLine(prompt []rune, buf []rune, pos int) error {
 	if _, err := fmt.Print(string(prompt)); err != nil {
 		return err
 	}
-	if _, err := fmt.Print(string(buf)); err != nil {
-		return err
+
+	if s.useColor {
+		s.highlighter.Reset(buf)
+		s.highlighter.Highlight()
+	} else {
+		if _, err := fmt.Print(string(buf)); err != nil {
+			return err
+		}
 	}
 
 	/* If we are at the very end of the screen with our prompt, we need to
