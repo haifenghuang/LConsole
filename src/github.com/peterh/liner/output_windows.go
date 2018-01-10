@@ -93,13 +93,13 @@ func (s *State) getColumns() {
 func GetOSVer() string {
 	cmd := exec.Command("cmd","ver")
 	cmd.Stdin = strings.NewReader("some input")
-	var out bytes.Buffer 
+	var out bytes.Buffer
 	var stderr bytes.Buffer
 	cmd.Stdout = &out
 	cmd.Stderr = &stderr
 	err := cmd.Run()
 	if err != nil {
-		return ""
+		return "0"
 	}
 
 	osStr := strings.Replace(out.String(),"\n","",-1)
@@ -108,10 +108,11 @@ func GetOSVer() string {
 	r, _ := regexp.Compile("\\[(.*?) (.*?)\\]")
 	matches := r.FindStringSubmatch(osStr)
 	if len(matches) < 3 {
-		return ""
+		return "0"
 	}
 
 	//only return the first part of the version
 	ver := strings.Split(matches[2], ".")
 	return ver[0]
-} 
+}
+
